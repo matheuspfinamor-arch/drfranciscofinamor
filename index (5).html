@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Francisco Estivallet Finamor Júnior - Endocrinologista com mais de 25 anos de experiência. Especialista em doenças da tireoide, diabetes e obesidade.">
+    <meta name="keywords" content="endocrinologista, São Paulo, diabetes, tireoide, obesidade">
+    <meta name="author" content="Dr. Francisco Estivallet Finamor Júnior">
+    <title>Dr. Francisco Estivallet Finamor Júnior - Endocrinologista</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a1a1a;
+            --primary-light: #ffffff;
+            --accent-red: #8B0000;
+            --accent-red-light: #a00000;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --bg-light: #f9f9f9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .logo span {
+            color: var(--accent-red);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-red);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 60px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .hero-text h1 span {
+            color: var(--accent-red);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .credential-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .credential-badge {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(139, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--accent-red);
+            font-family: 'Playfair Display', serif;
+            flex-shrink: 0;
+        }
+
+        .credential-text h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .credential-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-red-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(139, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--accent-red);
+            border: 2px solid var(--accent-red);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(139, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .credentials {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .divider-accent {
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-red);
+            margin: 0 auto 1.5rem;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-red);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-card h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .highlight-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .covid-section {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(139, 0, 0, 0.02) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-red);
+            margin-top: 2rem;
+        }
+
+        .covid-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-bottom: 1rem;
+        }
+
+        .covid-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Specialties Section */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialty-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-red);
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .specialty-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .specialty-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .research-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .research-card h4 {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+        }
+
+        .research-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .commitment-box {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(139, 0, 0, 0.02) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .commitment-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .commitment-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Map Section */
+        .map-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .address-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .address-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .address-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .address-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .address-item strong {
+            display: block;
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .address-item p {
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .address-link {
+            display: inline-block;
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .address-link:hover {
+            color: var(--accent-red-light);
+        }
+
+        @media (max-width: 768px) {
+            .map-section {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-red);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-red);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-red-light);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background-color: var(--accent-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 24px rgba(139, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+
+        .floating-whatsapp:hover {
+            background-color: var(--accent-red-light);
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(139, 0, 0, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            .floating-whatsapp {
+                bottom: 16px;
+                right: 16px;
+                width: 48px;
+                height: 48px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--accent-red); flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663488121257/XZDqy6apgkszGVCZSYVzZC/dr-finamor-logo-FDodbu7kc47CgE4rY58cVr.webp" alt="Logo" style="height: 48px; width: 48px; object-fit: cover;">
+                    </div>
+                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--accent-red);">Dr. Francisco Estivallet Finamor Júnior</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#specialties">Especialidades</a></li>
+                        <li><a href="#experience">Experiência</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in-up">
+                    <h1>Excelência em <span>Endocrinologia</span></h1>
+                    <p>Diagnóstico preciso, experiência hospitalar e abordagem baseada em evidência científica</p>
+                    
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <div class="credential-badge">PhD</div>
+                            <div class="credential-text">
+                                <h3>UNIFESP</h3>
+                                <p>Doutor em Endocrinologia</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="credential-badge">A.E.</div>
+                            <div class="credential-text">
+                                <h3>Albert Einstein</h3>
+                                <p>Desde 1996</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="hero-image fade-in-up">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663488121257/XZDqy6apgkszGVCZSYVzZC/dr-francisco-new_2e06d69c.png" alt="Dr. Francisco Estivallet Finamor Júnior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-accent"></div>
+                <h2>Sobre o Médico</h2>
+                <p>Formação acadêmica, experiência profissional e dedicação à excelência</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Trajetória Profissional</h3>
+                    <p>Dr. Francisco Estivallet Finamor Júnior possui graduação em Medicina pela Universidade de Brasília - UnB (1994), Residência em Clínica Médica e Endocrinologia e Metabologia pela Universidade Federal de São Paulo (UNIFESP/EPM) em 1998, Mestrado em Medicina (Endocrinologia Clínica) pela Universidade Federal de São Paulo (2000) e Doutorado em Medicina (Endocrinologia Clínica) pela Universidade Federal de São Paulo (2004), MBA em Economia e Gestão em Saúde pela Universidade Federal de São Paulo (2014).</p>
+                    
+                    <p>Atualmente é Professor de Medicina na Universidade Cidade de São Paulo (UNICID) e desde 2021 é Professor Afiliado da Universidade Federal de São Paulo (UNIFESP). Atuou na coordenação do Pronto Socorro do Hospital São Paulo até 2022, com experiência na área de gestão hospitalar e emergências clínicas e endocrinológicas. É médico credenciado do Hospital Israelita Albert Einstein desde 1996.</p>
+                    
+                    <p>Tem experiência na área de Clínica Médica, com ênfase em Endocrinologia, atuando principalmente nos seguintes temas: disfunções tiroidianas (hipotiroidismo e hipertiroidismo), obesidade, Diabetes Mellitus, Oftalmopatia de Graves e carcinoma diferenciado da tireóide. Médico do corpo clínico da Endoclínica de São Paulo desde 2003, atuando nas áreas de obesidade, neuroendocrinologia, Diabetes Mellitus tipo 2 e doenças da tireoide. Delegado do CREMESP de fevereiro de 2014 a setembro de 2018, exercendo ação na Delegacia de Vila Mariana.</p>
+                </div>
+
+                <div>
+                    <div class="highlights">
+                        <div class="highlight-card">
+                            <h4>PhD UNIFESP</h4>
+                            <p>Doutorado em Endocrinologia Clínica</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>Albert Einstein</h4>
+                            <p>Credenciado desde 1996</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>UNICID</h4>
+                            <p>Professor de Medicina</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>CRM 80765</h4>
+                            <p>Registro profissional</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>RQE 22595</h4>
+                            <p>Especialista em Endocrinologia</p>
+                        </div>
+                    </div>
+
+                    <div class="covid-section">
+                        <h3>🏥 Herói da COVID-19</h3>
+                        <p>Durante a pandemia de COVID-19, o Dr. Francisco atuou na linha de frente contra a doença, demonstrando coragem, dedicação e expertise clínica. Sua contribuição foi fundamental no atendimento de pacientes em situações críticas. Recebeu título condecido pela UNIFESP em reconhecimento à sua dedicação e excelente desempenho durante a pandemia, reafirmando seu compromisso com a excelencia médica e o bem-estar da população.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section id="specialties">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-accent"></div>
+                <h2>Especialidades</h2>
+                <p>Áreas de atuação clínica e expertise médica</p>
+            </div>
+
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <h3>Endocrinologia Clínica</h3>
+                    <p>Diagnóstico e tratamento de doenças endócrinas com abordagem baseada em evidências científicas e protocolos internacionais.</p>
+                </div>
+                <div class="specialty-card">
+                    <h3>Doenças da Tireoide</h3>
+                    <p>Especialista em hipotiroidismo, hipertiroidismo, oftalmopatia de Graves e carcinoma diferenciado da tireoide.</p>
+                </div>
+                <div class="specialty-card">
+                    <h3>Diabetes Mellitus</h3>
+                    <p>Manejo completo de diabetes tipo 2, com foco em prevenção de complicações e qualidade de vida do paciente.</p>
+                </div>
+                <div class="specialty-card">
+                    <h3>Obesidade</h3>
+                    <p>Tratamento multidisciplinar da obesidade com abordagem clínica e endocrinológica integrada.</p>
+                </div>
+                <div class="specialty-card">
+                    <h3>Neuroendocrinologia</h3>
+                    <p>Diagnóstico e tratamento de desordens neuroendócrinas e interações entre sistema nervoso e endócrino.</p>
+                </div>
+                <div class="specialty-card">
+                    <h3>Medicina de Emergência</h3>
+                    <p>Manejo de urgências médicas e crises endócrinas agudas com experiência hospitalar consolidada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="commitment-box">
+                <h3>Experiência Profissional</h3>
+                <p>Com mais de 25 anos de experiência clínica, o Dr. Finamor consolidou sua trajetória como um dos principais especialistas em endocrinologia do Brasil. Sua dedicação ao ensino, pesquisa e atendimento de excelencia o posiciona como referência na especialidade, garantindo que seus pacientes recebam o melhor tratamento baseado em evidências científicas e protocolos internacionais.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Anos de Experiência</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">UNIFESP</div>
+                        <div class="stat-label">Professor Afiliado</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">UNICID</div>
+                        <div class="stat-label">Professor de Medicina</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-accent"></div>
+                <h2>Contato</h2>
+                <p>Entre em contato com o Dr. Finamor</p>
+            </div>
+
+            <div class="map-section">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4437925847!2d-46.6471221!3d-23.5969869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a238e2b026f%3A0x2d7ed3c58b87a7fe!2sR.%20Borges%20Lagoa%2C%201065%20-%20Vila%20Clementino%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004038-032!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="address-info">
+                    <h3>Consultório</h3>
+                    
+                    <div class="address-item">
+                        <strong>📍 Endereço</strong>
+                        <p>Rua Borges Lagoa, 1065 - Conjunto 86<br>Vila Clementino, São Paulo - SP<br>04038-032</p>
+                    </div>
+
+                    <div class="address-item">
+                        <strong>📞 Telefone</strong>
+                        <p><a href="tel:+551150840982" style="color: var(--accent-red); text-decoration: none;">(11) 5084-0982</a></p>
+                    </div>
+
+                    <div class="address-item">
+                        <strong>💬 WhatsApp</strong>
+                        <p><a href="https://wa.me/5511962829115" target="_blank" rel="noopener noreferrer" style="color: var(--accent-red); text-decoration: none;">(11) 9 6282-9115</a></p>
+                    </div>
+
+                    <div class="address-item">
+                        <strong>📧 Email</strong>
+                        <p>f.finamor@gmail.com</p>
+                    </div>
+
+                    <div class="address-item">
+                        <strong>🏥 RQE</strong>
+                        <p>22595 - Especialista em Endocrinologia</p>
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/Rua+Borges+Lagoa,+1065,+Vila+Clementino,+São+Paulo" target="_blank" rel="noopener noreferrer" class="address-link">Abrir no Google Maps →</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dr. Finamor</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin: 0;">Excelência em Endocrinologia e Clínica Médica</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#about">Sobre o Médico</a></li>
+                        <li><a href="#specialties">Especialidades</a></li>
+                        <li><a href="#experience">Experiência</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="tel:+551150840982">(11) 5084-0982</a></li>
+                        <li><a href="https://wa.me/5511962829115" target="_blank" rel="noopener noreferrer">(11) 9 6282-9115</a></li>
+                        <li><a href="mailto:f.finamor@gmail.com">f.finamor@gmail.com</a></li>
+                        <li>CRM: 80765</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/franfinamor?igsh=cm1ndmtobjJuZGVt" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663488121257/XZDqy6apgkszGVCZSYVzZC/2XUqCSG7TBeO_f1946ab9.jpg" alt="Instagram" style="width: 100%; height: 100%; border-radius: 8px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Francisco Estivallet Finamor Júnior. Todos os direit                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511962829115" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" title="Conversar no WhatsApp">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663488121257/XZDqy6apgkszGVCZSYVzZC/zapzap_890edcdb.webp" alt="WhatsApp" style="width: 100%; height: 100%; border-radius: 12px;">
+    </a>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
